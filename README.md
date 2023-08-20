@@ -59,7 +59,6 @@ private class DLBNode {
     }
 ```
 
-The last set of methods operate on the prefix String by checking whether it is a word in the dictionary (`isWord()`), adding it if not (`add()`), retrieving the number predictions for the prefix String (`getNumberOfPredictions`), and retrieving one of the predictions (if any) (`retrievePrediction`). Retrieving the number predictions should be as simple as returning the `size` field of the `currentNode`. The `add()` method should increment the `size` field for some of the nodes (which ones?). (Hint: you may need to climb up the trie.)
 
 ```java
   /**
