@@ -4,8 +4,7 @@ AutoComplete Program
 
 Autocomplete is a commonly used feature in mobile phones, text editors, and search engines. As a user types in letters, the system shows a list of word predictions to help the user complete the word they are typing. The core of an efficient autocompletion system is a fast algorithm for retrieving word predictions based on the user input. The word predictions are all the words (in a given dictionary) that start with what the user has typed so far (i.e., the list of words for which the user's input is a prefix).
 
-The `AutoCompleteInterface` defines a Java interface for a dictionary that provides word predictions for such an autocompletion system. Besides storing a set of words, the dictionary keeps track of a prefix String, which starts with the empty String. You will implement methods to add one character to and delete the last character of that prefix String. You will also implement methods that use that prefix String for various operations, such as checking if the prefix String is one of the words in the dictionary, retrieving the number of words that have the prefix String as a prefix, and adding the prefix String to the dictionary.
-
+The `AutoCompleteInterface` defines a Java interface for a dictionary that provides word predictions for such an autocompletion system. Besides storing a set of words, the dictionary keeps track of a prefix String, which starts with the empty String. 
 
 
 ```java
@@ -29,7 +28,6 @@ private class DLBNode {
  ```
 
 
-The next set of the methods modify the prefix String maintained by the dictionary. These methods are: `advance(char c)` for appending a character to the prefix String, `retreat()` for deleting the last character, and `reset()` for resetting it back to the empty String. More details about these methods can be found below. Your code should maintain a `DLBNode currentNode` reference to always point to the DLB node at the end of the prefix String. `currentNode` is null when the prefix String is `""`, moves over the sibling list of the root node upon the first call to `advance`, moves possibly sideways then down the trie with each further call to `advance`, moves possibly sideways then up the trie with `retreat` until resetting to `null` when the prefix String becomes empty, and resets to `null` with `reset`.
 
 ```java
   /**
